@@ -24,7 +24,8 @@ public class ExcelToDoubleArray {
                             values.add(cell.getNumericCellValue());
                             break;
                         default:
-                            throw new IllegalArgumentException("Only numeric cells are supported");
+                            values.add(cell.getNumericCellValue());
+                           // throw new IllegalArgumentException("Only numeric cells are supported");
                     }
                 }
                 double[] rowArray = values.stream().mapToDouble(Double::doubleValue).toArray();

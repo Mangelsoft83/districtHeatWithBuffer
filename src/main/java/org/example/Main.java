@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.util.Calendar;
 import java.util.Date;
 
+
 public class Main {
     static final double bufferSize = 250 * 995; //kg = m3 * density
     static final double supplyT = 72;
@@ -28,7 +29,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String filePath = "C:\\javatraining\\bufferDesign\\src\\main\\resources\\data.xlsx";
+        String filePath = "C:\\javatraining\\bufferDesign\\src\\main\\resources\\data2.xlsx";
         double[][] data = ExcelToDoubleArray.readExcelFileToDoubleArray(filePath);
 
         //Reading district heating power
@@ -85,9 +86,6 @@ public class Main {
         XYSeriesCollection dataset2 = new XYSeriesCollection();
         dataset2.addSeries(graph3);
 
-
-
-
         if (data != null) {
             SwingUtilities.invokeLater(() -> {
 
@@ -97,6 +95,8 @@ public class Main {
                 example.setVisible(true);
             });
         }
+
+
     }
 
     private static XYSeries makeXYSeries(double[] axisX, double[] axisY,String name) {
